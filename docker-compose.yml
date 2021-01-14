@@ -1,8 +1,8 @@
 version: '3' #version of yml file
 
-service:
+services:
   db:
-    image: mysql:latest
+    image: "mysql:latest"
     volumes:
       - db_data:/var/lib/mysql
     restart: always
@@ -13,15 +13,15 @@ service:
       MYSQL_PASSWORD: wordpress
   
   wordpress:
-    depend-on:
-      -db
-    image: wordpress:latest
+    image: "wordpress:latest"
+    depends_on:
+      - db
     ports:
-    -"6969:80"
+      - "6969:80"
     environment: 
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpressuser
       WORDPRESS_DB_PASSWORD: wordpress
 
-voulmes:
+volumes:
   db_data:
