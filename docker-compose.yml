@@ -1,0 +1,13 @@
+version: '3' #version of yml file
+
+service:
+  db:
+    image: mysql
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment: 
+      MYSQL_ROOT_PASSWORD: mypassword
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpressuser
+      MYSQL_PASSWORD: wordpress
