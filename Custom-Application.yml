@@ -30,3 +30,7 @@ services:
     Links:
       database:db
       distro
+
+volumes:
+  data:
+    external: true
