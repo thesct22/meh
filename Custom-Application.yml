@@ -9,8 +9,24 @@ services:
   
   database:
     image: postgres:latest
+    restart: always
     container_name: postgres_db
     ports:
       - "5432:5432"
     volumes:
       - ../dump:/tmp/
+
+  web:
+    image: nginx
+    restart: always
+    container_name: nginx_web
+    ports:
+      - "6969:80"
+    volumes:
+      - ./mysite.template:/etc/nginx/conf.d/mysite.template
+    environment:
+      - NGINX_HOST=sample.container_name
+      - NGINX_PORT=80
+    Links:
+      database:db
+      distro
