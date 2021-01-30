@@ -1,3 +1,5 @@
 pwd.txt
 
 swarm-stacks/data/appendonly.aof
+
+secret-example/*.txt
