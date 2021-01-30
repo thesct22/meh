@@ -12,8 +12,8 @@ services:
       resources:
         # Limiting each one to use, at most, 10% of a single core of CPU time and 50MB of RAM.
         limits:
-          cpus: "1"
-          memory: 500M
+          cpus: ".3"
+          memory: 100M
       # Immediately restart containers if one fails.     
       restart_policy:
         condition: on-failure
@@ -21,6 +21,18 @@ services:
     ports:
       - "4000:80"
     # Define default network  
+    networks:
+      - webnet
+  
+  visualizer:
+    image: dockersamples/visualizer
+    ports:
+      - "8090:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
     networks:
       - webnet
 networks:
