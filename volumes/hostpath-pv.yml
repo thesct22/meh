@@ -1,0 +1,20 @@
+#pv is persistent volume
+#dont forget about ssh-ing into minikube
+#and creating a data dir in /home/<username>
+#here /home/docker
+#then make the index.html
+#that you want on the apache servers
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-local
+  labels: 
+    type: local
+spec:
+  capacity:
+    storage: 200Mi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local
+  hostPath:
+    path: "/home/docker/data"
