@@ -6,11 +6,6 @@ variable "AWS_REGION" {
   default = "us-east-2"
 }
 
-variable "Security_Group" {
-  type=list(string)
-  default = ["g-24076","sg-90890","sg-45678"]
-}
-
 variable "AMIS" {
   type = map
   default = {
