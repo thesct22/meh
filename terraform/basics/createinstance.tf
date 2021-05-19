@@ -1,8 +1,7 @@
-# make provider.tf with these
-# provider "aws" {
-#     access_key = "access key"
-#     secret_key = "secret key"
-#     region = "us-east-2"
+# make terraform.tfvars with these
+# AWS_ACCESS_KEY = "your access key"
+# AWS_SECRET_KEY = "your secret key"
+# AWS_REGION = "region you want"
 # }
 
 
