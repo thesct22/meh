@@ -1,0 +1,7 @@
+*.out
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
+levelup_key
+levelup_key.pub
