@@ -1,0 +1,6 @@
+*.out
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
+my_private_ips.txt
